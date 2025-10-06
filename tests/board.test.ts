@@ -64,3 +64,12 @@ test("should parse board color customization props", () => {
   expect(parsed.topSilkscreenColor).toBe("kicad:silkscreen_special")
   expect(parsed.bottomSilkscreenColor).toBe("ghost_white")
 })
+
+test("should parse board title prop", () => {
+  const raw: BoardProps = {
+    name: "board",
+    title: "My Board",
+  }
+  const parsed = boardProps.parse(raw)
+  expect(parsed.title).toBe("My Board")
+})
